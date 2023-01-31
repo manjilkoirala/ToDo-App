@@ -27,9 +27,14 @@ class HomePage extends StatelessWidget {
       ),
       body: Container(
         color: Colors.black,
-        height: 50,
-        width: 100,
-        child: const Text('This is a simple todo app.'),
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        child: const Padding(
+          padding: EdgeInsets.only(top: 10),
+          child: Text('This is a simple todo app.',
+              textAlign: TextAlign.center,
+              style: TextStyle(color: Colors.white, fontSize: 24)),
+        ),
       ),
     );
   }
