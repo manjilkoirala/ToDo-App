@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:todo_app/Constant/colors.dart';
+
+import 'Screens/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,33 +13,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+        const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('To Do App'),
-      ),
-      body: Container(
-        color: Colors.black,
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
-        child: const Padding(
-          padding: EdgeInsets.only(top: 10),
-          child: Text('This is a simple todo app.',
-              textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white, fontSize: 24)),
-        ),
-      ),
     );
   }
 }
