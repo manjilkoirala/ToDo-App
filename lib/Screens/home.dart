@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:todo_app/Constant/colors.dart';
+import 'package:todo_app/widgets/todo_items.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -17,6 +18,21 @@ class HomePage extends StatelessWidget {
           child: Column(
             children: [
               searchBox(),
+              Expanded(
+                child: ListView(
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.only(top: 50, bottom: 20),
+                      child: const Text(
+                        "To Do List",
+                        style: TextStyle(
+                            fontSize: 30, fontWeight: FontWeight.w500),
+                      ),
+                    ),
+                    const ToDoItem()
+                  ],
+                ),
+              )
             ],
           ),
         ),
@@ -26,7 +42,7 @@ class HomePage extends StatelessWidget {
 
   Widget searchBox() {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 15),
+      padding: const EdgeInsets.symmetric(horizontal: 15),
       decoration: BoxDecoration(
           color: Colors.white, borderRadius: BorderRadius.circular(20)),
       child: const TextField(
