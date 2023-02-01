@@ -1,8 +1,14 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+
 import 'package:todo_app/Constant/colors.dart';
 
 class ToDoItem extends StatelessWidget {
-  const ToDoItem({super.key});
+  final String item;
+  const ToDoItem({
+    Key? key,
+    required this.item,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +22,9 @@ class ToDoItem extends StatelessWidget {
         ),
         tileColor: Colors.white,
         leading: const Icon(Icons.check_box, color: tdBlue),
-        title: const Text(
-          'Check Mail',
-          style: TextStyle(
+        title: Text(
+          item,
+          style: const TextStyle(
               color: tdBlack,
               fontSize: 16,
               decoration: TextDecoration.lineThrough),

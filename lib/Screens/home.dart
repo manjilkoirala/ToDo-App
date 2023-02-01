@@ -29,16 +29,34 @@ class HomePage extends StatelessWidget {
                             fontSize: 30, fontWeight: FontWeight.w500),
                       ),
                     ),
-                    const ToDoItem(),
-                    const ToDoItem(),
-                    const ToDoItem(),
-                    const ToDoItem(),
-                    const ToDoItem(),
-                    const ToDoItem(),
-                    const ToDoItem(),
-                    const ToDoItem(),
-                    const ToDoItem(),
-                    const ToDoItem(),
+                    const ToDoItem(item: 'Check Mail'),
+                    const ToDoItem(
+                      item: 'Read Book',
+                    ),
+                    const ToDoItem(
+                      item: 'Do Homework',
+                    ),
+                    const ToDoItem(
+                      item: 'Read Newspaper',
+                    ),
+                    const ToDoItem(
+                      item: 'Eat Food',
+                    ),
+                    const ToDoItem(
+                      item: 'Wash Clothes',
+                    ),
+                    const ToDoItem(
+                      item: 'Watch Movie',
+                    ),
+                    const ToDoItem(
+                      item: 'Write Blog',
+                    ),
+                    const ToDoItem(
+                      item: 'Drink Water',
+                    ),
+                    const ToDoItem(
+                      item: 'Go For Walk',
+                    ),
                   ],
                 ),
               )
