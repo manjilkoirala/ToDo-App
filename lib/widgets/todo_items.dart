@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:todo_app/Constant/colors.dart';
 
 class ToDoItem extends StatelessWidget {
@@ -9,14 +7,16 @@ class ToDoItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.only(bottom: 20),
       child: ListTile(
+        contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
         onTap: () {},
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),
         tileColor: Colors.white,
         leading: const Icon(Icons.check_box, color: tdBlue),
-        title: Text(
+        title: const Text(
           'Check Mail',
           style: TextStyle(
               color: tdBlack,
@@ -24,6 +24,7 @@ class ToDoItem extends StatelessWidget {
               decoration: TextDecoration.lineThrough),
         ),
         trailing: Container(
+          margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 12),
           height: 35,
           width: 35,
           decoration: BoxDecoration(
@@ -34,7 +35,7 @@ class ToDoItem extends StatelessWidget {
             onPressed: () {},
             color: Colors.white,
             iconSize: 18,
-            icon: Icon(Icons.delete),
+            icon: const Icon(Icons.delete),
           ),
         ),
       ),
