@@ -2,10 +2,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:todo_app/Constant/colors.dart';
+import 'package:todo_app/models/todo_model.dart';
 import 'package:todo_app/widgets/todo_items.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
+  final todoList = todolist();
 
   @override
   Widget build(BuildContext context) {
@@ -29,34 +31,10 @@ class HomePage extends StatelessWidget {
                             fontSize: 30, fontWeight: FontWeight.w500),
                       ),
                     ),
-                    const ToDoItem(item: 'Check Mail'),
-                    const ToDoItem(
-                      item: 'Read Book',
-                    ),
-                    const ToDoItem(
-                      item: 'Do Homework',
-                    ),
-                    const ToDoItem(
-                      item: 'Read Newspaper',
-                    ),
-                    const ToDoItem(
-                      item: 'Eat Food',
-                    ),
-                    const ToDoItem(
-                      item: 'Wash Clothes',
-                    ),
-                    const ToDoItem(
-                      item: 'Watch Movie',
-                    ),
-                    const ToDoItem(
-                      item: 'Write Blog',
-                    ),
-                    const ToDoItem(
-                      item: 'Drink Water',
-                    ),
-                    const ToDoItem(
-                      item: 'Go For Walk',
-                    ),
+                    for (ToDo todo in todoList)
+                      ToDoItem(
+                        todo: todo,
+                      ),
                   ],
                 ),
               )
